@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+   <record id="lease_duration" model="ir.ui.view">
+        <field name="name">Lease Duration</field>
+        <field name="model">lease.property</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="lease_duration"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
