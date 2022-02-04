@@ -61,6 +61,12 @@ dynamic template with different directives You should use directives like t-fore
         </t>
     </template>
 
+    <template id="properties" name="properties">
+        <t t-call="website.layout">
+
+        </t>
+    </template>
+
 
 </odoo>
 

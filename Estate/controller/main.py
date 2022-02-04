@@ -23,4 +23,6 @@ class EstateProperty(http.Controller):
         print ("property ::: ", Properties)
         return request.render('Estate.hello_user', { 'user': request.env.user, 'property': Properties })
 
-     
+    @http.route('/property', website=True)
+    def property(self, **kw):
+          return request.render('Estate.properties',{})
