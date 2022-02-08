@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="appoiment_actions" model="ir.actions.act_window">
+        <field name="name">Employe_detailsy</field>
+        <field name="res_model">appointment.system</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+
+    <menuitem id="apointment_menu_root" name="Appointment Sedualing"/>
+    
+    <menuitem id="apointment_first_level_menu" name="Appointment" parent="apointment_menu_root"/>
+    <menuitem id="apointment_model_menu_action" parent="apointment_first_level_menu" action="appoiment_actions"/> 
+
+</odoo>

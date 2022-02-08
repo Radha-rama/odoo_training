@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="appointment_view_tree" model="ir.ui.view">
+        <field name="name">Appointment</field>
+        <field name="model">appointment.system</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="appointment_type"/>
+                <!-- <field name="time_zone"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id="appointment_form" model="ir.ui.view">
+        <field name="name">Appointment System</field>
+        <field name="model">appointment.system</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="time"/>
+                        <!-- <field name="time_zone"/> -->
+                        <field name="phone_number"/>
+                    </group>
+                    <group>
+                        <notebook>
+                            <page string="appoinment_detail">
+                                <group>
+                                    <field name="address"/>
+                                    <field name="location"/>
+                                    <field name="schedule_appointment"/>
+                                    <field name="appointment_duration"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
