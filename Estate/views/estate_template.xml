@@ -43,9 +43,6 @@ dynamic template with different directives You should use directives like t-fore
                                         </a>
                                     </td>
                                     <td>
-                                        <t t-out="property.name" />
-                                    </td>
-                                    <td>
                                         <t t-if="property.description" t-out="property.description" />
                                         <t t-else="">No Description Available</t>
                                     </td>
