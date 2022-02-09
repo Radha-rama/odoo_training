@@ -37,4 +37,20 @@ class EstateProperty(http.Controller):
                     'property' :property
                 })
 
- 
+
+
+    @http.route('/property/add', auth="public", website=True)
+    def partner_form(self, **post):
+        return request.render("Estate.tmp_property_form", {})
+
+    @http.route('/property/form/submit', auth="public", website=True)
+    def property_form_submit(self, **post):
+        partner = request.env['estate.property'].create({
+            'name': post.get('name'),
+            'expected_price': post.get('expected_price'),
+        })
+        print("PRINT :::", post)
+        vals = {
+            'partner': partner,
+        }
+        return request.render("Estate.tmp_property_form_success", vals)

@@ -16,6 +16,7 @@
         'views/estate_template.xml', 
         'Report/property_report.xml',   
         'Report/report.xml', 
+        'views/form_view.xml',
     ],
     'installable': True,
     'application': True,
