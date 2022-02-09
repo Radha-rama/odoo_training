@@ -25,4 +25,16 @@ class EstateProperty(http.Controller):
 
     @http.route('/property', website=True)
     def property(self, **kw):
-          return request.render('Estate.properties',{})
+         Properties = request.env['estate.property'].search([])
+        #  print ("property ::: ", Properties)
+         return request.render('Estate.properties',{'user': request.env.user,'property': Properties})
+
+
+    @http.route(['/property/<model("estate.property"):property>', '/property/<string:is_static>'], auth="public", website=True)
+    def property_details(self, property=False, **kw):
+            if property :
+                return request.render('Estate.property_details',{
+                    'property' :property
+                })
+
+ 

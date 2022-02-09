@@ -10,9 +10,10 @@ class EstateProperty(models.Model):
 
     _name = "estate.property"
     _description = "Estate Property"
-
-    name = fields.Char(string="Property Name",
-                       defauit="unknown", required=True)
+    _inherit = [
+        'image.mixin',
+    ]
+    name = fields.Char(string="Property Name",default="unknown", required=True)
     description = fields.Text(default=_get_description)
     Tag = fields.Char()
     postcode = fields.Char()
@@ -31,7 +32,7 @@ class EstateProperty(models.Model):
         ('south', 'South'), ('west', 'West')
     ])
     active = fields.Boolean(default=True)
-    image = fields.Image()
+    # image = fields.Image()
     validity = fields.Integer(default=7)
     property_type_id = fields.Many2one('estate.property.type')
     buyer_id = fields.Many2one('res.partner')
